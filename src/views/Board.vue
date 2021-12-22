@@ -6,13 +6,14 @@
         <div
           v-for="item in column.items"
           :key="item.title"
+          @click="$router.push({ name: 'Task', params: { id: item.id } })"
           class="bg-white text-xs rounded-md border-l-4 border-blue-500 overflow-hidden mt-3 shadow-md"
         >
           <div class="py-3 px-4 text-gray-600">
             {{ item.title }}
           </div>
           <div class="bg-gray-100 py-2 px-4 flex justify-between items-center">
-            <span class="text-gray-400">#1337</span>
+            <span class="text-gray-400">#{{ item.id }}</span>
             <span
               class="rounded-full bg-blue-300 h-6 w-6 flex items-center justify-center text-blue-600"
             >
@@ -22,6 +23,7 @@
         </div>
       </div>
     </div>
+    <router-view />
   </div>
 </template>
 
@@ -37,22 +39,28 @@ export default defineComponent({
         title: "Ready for development",
         items: [
           {
+            id: 1,
             title: "The list of repositories",
           },
           {
+            id: 2,
             title: "The function to update the list of repositories",
           },
           {
+            id: 3,
             title:
               "Returning both the list and the function so they are accessible by other component options",
           },
           {
+            id: 4,
             title: "The list of repositories",
           },
           {
+            id: 5,
             title: "The function to update the list of repositories",
           },
           {
+            id: 6,
             title:
               "Returning both the list and the function so they are accessible by other component options",
           },
