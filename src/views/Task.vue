@@ -35,16 +35,16 @@
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
       >
         <div class="grid grid-cols-12">
-          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 col-span-10">
+          <div class="bg-white p-8 col-span-10">
             <div class="sm:flex sm:items-start">
-              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+              <div>
                 <h3
                   class="text-lg leading-6 font-medium text-gray-900"
                   id="modal-title"
                 >
                   Deactivate account
                 </h3>
-                <div class="mt-2 text-gray-500 leading-relaxed text-sm mb-6">
+                <div class="mt-2 text-gray-500 leading-relaxed text-sm">
                   <p class="mt-6">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
                     commodi, cumque est ipsa laborum, neque perspiciatis placeat
@@ -97,7 +97,7 @@
                     repudiandae vitae?
                   </p>
                 </div>
-                <div class="border-t py-6">
+                <div class="border-t py-6 mt-6">
                   <div class="antialiased">
                     <h3 class="mb-4 text-lg font-semibold text-gray-900">
                       Comments

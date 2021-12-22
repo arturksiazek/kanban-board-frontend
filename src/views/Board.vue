@@ -39,19 +39,6 @@ export default defineComponent({
         title: "Ready for development",
         items: [
           {
-            id: 1,
-            title: "The list of repositories",
-          },
-          {
-            id: 2,
-            title: "The function to update the list of repositories",
-          },
-          {
-            id: 3,
-            title:
-              "Returning both the list and the function so they are accessible by other component options",
-          },
-          {
             id: 4,
             title: "The list of repositories",
           },
@@ -68,11 +55,26 @@ export default defineComponent({
       },
       {
         title: "In development",
-        items: [],
+        items: [
+          {
+            id: 1,
+            title: "The list of repositories",
+          },
+          {
+            id: 2,
+            title: "The function to update the list of repositories",
+          },
+        ],
       },
       {
         title: "Ready for review",
-        items: [],
+        items: [
+          {
+            id: 3,
+            title:
+              "Returning both the list and the function so they are accessible by other component options",
+          },
+        ],
       },
       {
         title: "Ready for deploy",
