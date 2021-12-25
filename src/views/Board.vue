@@ -1,6 +1,6 @@
 <template>
-  <div class="grid gap-8 grid-cols-5">
-    <div class="" v-for="column in columns" :key="column.title">
+  <div class="flex min-w-max">
+    <div class="w-80 mr-8" v-for="column in columns" :key="column.title">
       <h2 class="text-sm text-gray-500">{{ column.title }}</h2>
       <div class="mt-4">
         <div
