@@ -6,16 +6,7 @@
           <BoardSelector />
           <ProjectSelector class="mt-10" />
         </div>
-        <div class="bg-green-800 p-4 text-white text-sm flex items-center">
-          <div class="flex items-center">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt=""
-              class="flex-shrink-0 h-6 w-6 rounded-full"
-            />
-            <span class="font-normal ml-3 block truncate"> Artur Książek </span>
-          </div>
-        </div>
+        <UserSettings class="bg-green-800 cursor-pointer p-4" />
       </div>
       <div class="bg-gray-200 p-10 rounded-tl-3xl w-full overflow-x-scroll">
         <router-view />
@@ -24,10 +15,10 @@
   </div>
 </template>
 <script>
-// import LogoutIcon from "@/components/logoutIcon";
+import UserSettings from "@/components/UserSettings";
 import BoardSelector from "@/components/BoardSelector";
 import ProjectSelector from "@/components/ProjectSelector";
 export default {
-  components: { ProjectSelector, BoardSelector },
+  components: { ProjectSelector, BoardSelector, UserSettings },
 };
 </script>
