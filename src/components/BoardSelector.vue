@@ -47,7 +47,7 @@
           </div>
 
           <span
-            class="text-green-900 absolute inset-y-0 right-0 flex items-center pr-3"
+            class="text-green-900 absolute inset-y-0 right-0 flex items-center pr-2"
           >
             <svg
               class="h-5 w-5"
