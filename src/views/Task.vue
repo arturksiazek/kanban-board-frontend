@@ -42,65 +42,10 @@
                       class="text-lg leading-6 font-medium text-gray-900"
                       id="modal-title"
                     >
-                      Deactivate account
+                      {{ task?.name }}
                     </h3>
                     <div class="mt-2 text-gray-500 leading-relaxed text-sm">
-                      <p class="mt-6">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Ad commodi, cumque est ipsa laborum, neque
-                        perspiciatis placeat possimus quibusdam quis sed ut.
-                        Aperiam ducimus inventore possimus sed suscipit unde!
-                        Delectus expedita labore laborum libero minus qui
-                        reiciendis? Modi voluptas voluptate voluptatem. Amet
-                        dicta eius eos provident quas? At, debitis excepturi
-                        facilis iusto natus quaerat quidem sit velit veritatis
-                        voluptatem!
-                      </p>
-                      <p class="mt-6">
-                        Asperiores dolor, doloribus dolorum expedita fugit harum
-                        impedit minus nobis obcaecati odio. Amet architecto
-                        autem, dolores error et explicabo facilis impedit
-                        incidunt iure maxime minima nam nesciunt placeat qui
-                        recusandae reiciendis repellat sint sit, unde
-                        voluptatibus? Accusantium ad aliquid aperiam asperiores
-                        corporis, cupiditate dolor ducimus, ea earum eius eos
-                        est exercitationem expedita fugit hic id illum impedit
-                        ipsa ipsum laboriosam natus necessitatibus nihil
-                        officiis pariatur perspiciatis possimus praesentium
-                        provident quasi quia ratione soluta tempore unde
-                        voluptate.
-                      </p>
-                      <p class="mt-6">
-                        A blanditiis deserunt, enim excepturi illo incidunt
-                        ipsam nostrum quaerat, quas qui quo quos reprehenderit
-                        sapiente sit ullam voluptates voluptatibus? Ad, aliquam
-                        aliquid dignissimos distinctio eius est fugiat, harum
-                        natus non nulla placeat porro quam quos reiciendis rerum
-                        sit temporibus tenetur unde ut voluptatum.
-                      </p>
-                      <p class="mt-6">
-                        Ab aliquam consequatur debitis eos eum explicabo impedit
-                        ipsa, ipsum itaque, laboriosam mollitia natus neque
-                        officiis optio provident quae ratione sapiente, sit
-                        soluta sunt ullam veniam vero voluptate voluptatem
-                        voluptatibus. Consequuntur incidunt inventore veritatis
-                        voluptatum. A adipisci beatae dolore facere molestias
-                        non, nostrum, quaerat quam quos reiciendis repellendus
-                        temporibus tenetur vel.
-                      </p>
-                      <p class="mt-6">
-                        Dolorem doloribus, enim illo, minus molestias
-                        necessitatibus nesciunt placeat quos, repellat sint sit
-                        tempora temporibus voluptate. Autem cum cupiditate
-                        debitis est laborum porro praesentium quisquam similique
-                        tempora temporibus! Accusamus accusantium adipisci
-                        aliquid at cum debitis dicta dolores doloribus ea eius
-                        enim eveniet explicabo in nihil numquam reiciendis
-                        repellat repellendus, reprehenderit tempora temporibus
-                        ullam vel veniam. Amet, atque, consequuntur dicta est
-                        explicabo fugit iste libero non quas, quos reprehenderit
-                        repudiandae vitae?
-                      </p>
+                      {{ task?.description }}
                     </div>
                     <div class="border-t py-6 mt-6">
                       <div class="antialiased">
@@ -264,7 +209,12 @@
                   <button
                     type="button"
                     class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
-                    @click="$router.push({ name: 'Board' })"
+                    @click="
+                      $router.push({
+                        name: 'Board',
+                        params: { board: boardSlug },
+                      })
+                    "
                   >
                     Cancel
                   </button>
@@ -280,17 +230,27 @@
 
 <script lang="ts">
 import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
+import { useRoute } from "vue-router";
 
 export default defineComponent({
   name: "Task",
   components: {},
+
   setup() {
+    const store = useStore();
+    const route = useRoute();
+
     const windowHeightStyle = computed(() => {
       return { maxHeight: window.innerHeight - 100 + "px" };
     });
 
+    store.dispatch("fetchTask", route.params.slug);
+
     return {
       windowHeightStyle,
+      task: computed(() => store.state.task),
+      boardSlug: computed(() => store.state.board?.slug),
     };
   },
 });

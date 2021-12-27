@@ -28,4 +28,11 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      alias: {
+        extensions: [".ts", ".js", ".vue", ".json"],
+      },
+    },
+  },
 };
