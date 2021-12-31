@@ -8,12 +8,14 @@ interface Task {
   createdAt: string;
   updatedAt: string;
   project: Project;
+  list: ListItem;
 }
 
 interface Project {
   id: string;
   name: string;
   boardId: string;
+  index: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -22,6 +24,7 @@ interface ListItem {
   id: string;
   name: string;
   boardId: string;
+  index: number;
   createdAt: string;
   updatedAt: string;
   tasks: Task[];
@@ -31,6 +34,7 @@ interface Board {
   id: string;
   name: string;
   slug: string;
+  index: number;
   createdAt: string;
   updatedAt: string;
   lists: ListItem[];

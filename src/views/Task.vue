@@ -177,17 +177,18 @@
               </div>
               <div class="bg-gray-50 w-60 py-6 px-4 flex flex-col">
                 <button
+                  @click="moveToNextColumn()"
                   type="button"
                   class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                 >
-                  To: In development
+                  To: {{ nextColumn?.name }}
                 </button>
 
                 <div class="mt-4 flex flex-col">
                   <span class="text-xs text-gray-400">State:</span>
-                  <span class="text-gray-600 text-sm"
-                    >Ready for development</span
-                  >
+                  <span class="text-gray-600 text-sm">
+                    {{ task?.list?.name }}
+                  </span>
                 </div>
 
                 <div class="mt-4 flex flex-col">
@@ -241,16 +242,28 @@ export default defineComponent({
     const store = useStore();
     const route = useRoute();
 
+    const task = computed(() => store.state.task);
+    const nextColumn = computed(() => store.getters["getNextColumn"]);
+    const boardSlug = computed(() => store.state.board?.slug);
     const windowHeightStyle = computed(() => {
       return { maxHeight: window.innerHeight - 100 + "px" };
     });
 
     store.dispatch("fetchTask", route.params.slug);
 
+    function moveToNextColumn() {
+      store.dispatch("updateTask", {
+        ...task.value,
+        listId: nextColumn.value.id,
+      });
+    }
+
     return {
       windowHeightStyle,
-      task: computed(() => store.state.task),
-      boardSlug: computed(() => store.state.board?.slug),
+      task,
+      boardSlug,
+      nextColumn,
+      moveToNextColumn,
     };
   },
 });
