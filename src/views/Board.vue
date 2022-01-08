@@ -7,7 +7,8 @@
           v-for="task in list.tasks"
           :key="task.name"
           @click="$router.push({ name: 'Task', params: { slug: task.slug } })"
-          class="bg-white text-xs rounded-md border-l-4 border-blue-500 overflow-hidden mt-3 shadow-md"
+          class="bg-white text-xs rounded-md border-l-4 overflow-hidden mt-3 shadow-md"
+          :class="`border-${task.project.color || 'gray'}-500`"
         >
           <div class="py-3 px-4 text-gray-600">
             {{ task.name }}
@@ -39,7 +40,15 @@ export default defineComponent({
     const store = useStore();
     const route = useRoute();
 
-    store.dispatch("fetchBoard", route.params.board);
+    try {
+      (async () => {
+        await store.dispatch("fetchBoard", route.params.board);
+        const boardSlug = computed(() => store.state.board?.id);
+        await store.dispatch("fetchProjects", boardSlug.value);
+      })();
+    } catch (error) {
+      throw new Error(error);
+    }
 
     const lists = computed(() => store.getters["getColumns"]);
 

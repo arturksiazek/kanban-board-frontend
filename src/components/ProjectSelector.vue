@@ -1,66 +1,39 @@
 <template>
   <div class="flex flex-col">
     <span class="text-xs text-gray-200">Projects</span>
-    <label class="inline-flex items-center mt-3">
-      <input
-        type="checkbox"
-        class="form-checkbox rounded-sm h-4 w-4 text-gray-600"
-        checked
-      /><span class="ml-2 text-white text-sm">Jarzębinowe</span>
-    </label>
 
-    <label class="inline-flex items-center mt-3">
+    <label
+      v-for="project in projects"
+      :key="project.name"
+      class="inline-flex items-center mt-3"
+    >
       <input
         type="checkbox"
-        class="form-checkbox rounded-sm h-4 w-4 text-red-600"
+        class="form-checkbox rounded-sm h-4 w-4"
         checked
-      /><span class="ml-2 text-white text-sm">Stacja Wola</span>
-    </label>
-
-    <label class="inline-flex items-center mt-3">
-      <input
-        type="checkbox"
-        class="form-checkbox rounded-sm h-4 w-4 text-orange-600"
-        checked
-      /><span class="ml-2 text-white text-sm">Hitpol</span>
-    </label>
-
-    <label class="inline-flex items-center mt-3">
-      <input
-        type="checkbox"
-        class="form-checkbox rounded-sm h-4 w-4 text-yellow-600"
-        checked
-      /><span class="ml-2 text-white text-sm">Enter</span>
-    </label>
-
-    <label class="inline-flex items-center mt-3">
-      <input
-        type="checkbox"
-        class="form-checkbox rounded-sm h-4 w-4 text-green-600"
-        checked
-      /><span class="ml-2 text-white text-sm">Dosłońce</span>
-    </label>
-
-    <label class="inline-flex items-center mt-3">
-      <input
-        type="checkbox"
-        class="form-checkbox rounded-sm h-4 w-4 text-pink-600"
-        checked
-      /><span class="ml-2 text-white text-sm">Interbud</span>
+        :class="`text-${project.color || 'gray'}-600`"
+      />
+      <span class="ml-2 text-white text-sm">
+        {{ project.name }}
+      </span>
     </label>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
 
 export default defineComponent({
-  name: "ProjectSelector",
+  name: "Board",
   components: {},
   setup() {
-    const isOpened = ref(false);
+    const store = useStore();
+    const projects = computed(() => store.state.projects);
 
-    return { isOpened };
+    return {
+      projects,
+    };
   },
 });
 </script>

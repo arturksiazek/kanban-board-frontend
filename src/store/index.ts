@@ -6,6 +6,7 @@ export default createStore<State>({
   state: {
     board: null,
     task: null,
+    projects: null,
   },
   getters: {
     getColumns: (state) => state.board?.lists,
@@ -24,6 +25,10 @@ export default createStore<State>({
     setTask: (state, task) => {
       state.task = task;
     },
+
+    setProjects: (state, projects) => {
+      state.projects = projects;
+    },
   },
   actions: {
     async fetchBoard({ commit }, boardSlug) {
@@ -38,6 +43,14 @@ export default createStore<State>({
       const { data } = await axios.get(`/task/${taskSlug}`);
 
       commit("setTask", data);
+
+      return data;
+    },
+
+    async fetchProjects({ commit }, boardId) {
+      const { data } = await axios.get(`/project/${boardId}`);
+
+      commit("setProjects", data);
 
       return data;
     },

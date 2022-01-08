@@ -43,4 +43,5 @@ interface Board {
 export interface State {
   board: Board | null;
   task: Task | null;
+  projects: Array<Project> | null;
 }
