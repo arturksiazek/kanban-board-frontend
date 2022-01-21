@@ -57,13 +57,13 @@
                           <div class="flex">
                             <div class="flex-shrink-0 mr-3">
                               <img
-                                class="mt-2 rounded-full w-6 h-6"
+                                class="mt-3 rounded-full w-6 h-6"
                                 src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
                                 alt=""
                               />
                             </div>
                             <div
-                              class="flex-1 text-xs border rounded-lg px-3 py-2 leading-relaxed"
+                              class="flex-1 text-xs px-3 py-2 leading-relaxed"
                             >
                               <strong>Sarah</strong>
                               <span class="ml-2 text-gray-400">3:34 PM</span>
@@ -73,36 +73,19 @@
                                 invidunt ut labore et dolore magna aliquyam
                                 erat, sed diam voluptua.
                               </p>
-                              <div class="mt-4 flex items-center">
-                                <div class="flex -space-x-2 mr-2">
-                                  <img
-                                    class="rounded-full w-6 h-6 border border-white"
-                                    src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt=""
-                                  />
-                                  <img
-                                    class="rounded-full w-6 h-6 border border-white"
-                                    src="https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&h=100&q=80"
-                                    alt=""
-                                  />
-                                </div>
-                                <div class="text-gray-500 font-semibold">
-                                  5 Replies
-                                </div>
-                              </div>
                             </div>
                           </div>
 
                           <div class="flex">
                             <div class="flex-shrink-0 mr-3">
                               <img
-                                class="mt-2 rounded-full w-6 h-6"
+                                class="mt-3 rounded-full w-6 h-6"
                                 src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
                                 alt=""
                               />
                             </div>
                             <div
-                              class="flex-1 text-xs border rounded-lg px-3 py-2 leading-relaxed"
+                              class="flex-1 text-xs px-3 py-2 leading-relaxed"
                             >
                               <strong>Sarah</strong>
                               <span class="ml-2 text-gray-400">3:34 PM</span>
@@ -113,60 +96,74 @@
                                 erat, sed diam voluptua.
                               </p>
 
-                              <h4
-                                class="my-5 uppercase tracking-wide text-gray-400 font-bold text-xs"
-                              >
-                                Replies
-                              </h4>
+                              <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. At error exercitationem
+                                molestiae natus, nobis temporibus.
+                              </p>
 
-                              <div class="space-y-4">
-                                <div class="flex">
-                                  <div class="flex-shrink-0 mr-3">
-                                    <img
-                                      class="mt-3 rounded-full w-6 h-6"
-                                      src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div
-                                    class="flex-1 text-xs bg-gray-100 rounded-lg px-3 py-2 leading-relaxed"
-                                  >
-                                    <strong>Sarah</strong>
-                                    <span class="text-gray-400 ml-2">
-                                      3:34 PM
-                                    </span>
-                                    <p>
-                                      Lorem ipsum dolor sit amet, consetetur
-                                      sadipscing elitr, sed diam nonumy eirmod
-                                      tempor invidunt ut labore et dolore magna
-                                      aliquyam erat, sed diam voluptua.
-                                    </p>
-                                  </div>
-                                </div>
-                                <div class="flex">
-                                  <div class="flex-shrink-0 mr-3">
-                                    <img
-                                      class="mt-3 rounded-full w-6 h-6"
-                                      src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div
-                                    class="flex-1 text-xs bg-gray-100 rounded-lg px-3 py-2 leading-relaxed"
-                                  >
-                                    <strong>Sarah</strong>
-                                    <span class="text-gray-400 ml-2">
-                                      3:34 PM
-                                    </span>
-                                    <p>
-                                      Lorem ipsum dolor sit amet, consetetur
-                                      sadipscing elitr, sed diam nonumy eirmod
-                                      tempor invidunt ut labore et dolore magna
-                                      aliquyam erat, sed diam voluptua.
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
+                              <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Aliquam consectetur cum
+                                deleniti dolores ducimus eveniet ex harum, minus
+                                nulla quaerat, quidem quod repellat sapiente
+                                similique sunt ut, voluptas. Doloremque facere
+                                maiores necessitatibus quidem ut! Ipsam?
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                              <img
+                                class="mt-3 rounded-full w-6 h-6"
+                                src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="flex-1 text-xs px-3 py-2 leading-relaxed"
+                            >
+                              <strong>Sarah</strong>
+                              <span class="ml-2 text-gray-400">3:34 PM</span>
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Accusantium amet aperiam
+                                dignissimos eum facere, illum?
+                              </p>
+                            </div>
+                          </div>
+                          <div class="flex">
+                            <div class="flex-shrink-0 mr-3">
+                              <img
+                                class="mt-3 rounded-full w-6 h-6"
+                                src="https://images.unsplash.com/photo-1604426633861-11b2faead63c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80"
+                                alt=""
+                              />
+                            </div>
+                            <div
+                              class="flex-1 text-xs px-3 py-2 leading-relaxed"
+                            >
+                              <strong>Sarah</strong>
+                              <span class="ml-2 text-gray-400">3:34 PM</span>
+                              <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Adipisci amet culpa eaque et
+                                fugiat iure magni minus nemo odio odit, officia
+                                optio provident quae quis reiciendis repellat
+                                rerum. Blanditiis ipsam itaque neque
+                                perspiciatis quam quos rem. Adipisci
+                                consequuntur cupiditate esse explicabo id ipsum
+                                labore neque obcaecati, optio quae repellendus
+                                repudiandae velit veritatis vero voluptate?
+                                Accusantium aliquam autem cum debitis dolorem
+                                esse expedita fugit molestias porro quae, quis
+                                ratione sint, sit soluta veniam vitae
+                                voluptatem! A aspernatur corporis esse in
+                                inventore ipsam iusto obcaecati, quia recusandae
+                                soluta, ullam ut. Amet aut blanditiis culpa et
+                                eum libero molestiae obcaecati quibusdam tempora
+                                totam.
+                              </p>
                             </div>
                           </div>
                         </div>
