@@ -58,10 +58,27 @@ export default createStore<State>({
     async updateTask({ commit }, task) {
       const { data } = await axios.put(`/task/${task.slug}`, { task });
 
-      commit("setTask", data);
+      commit("setTask", task);
 
       return data;
     },
+
+    async changeTaskList({ state }, { task, newListId }) {
+      await state.board?.lists.find((list) => {
+        if (list.id === newListId) {
+          list.tasks.push(task);
+
+          return list;
+        }
+      });
+
+      await state.board?.lists.find((list) => {
+        if (list.id === task.listId) {
+          list.tasks = list.tasks.filter((element) => element.id !== task.id);
+
+          return list;
+        }
+      });
+    },
   },
-  modules: {},
 });

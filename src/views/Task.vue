@@ -173,13 +173,16 @@
                 </div>
               </div>
               <div class="bg-gray-50 w-60 py-6 px-4 flex flex-col">
-                <button
-                  @click="moveToNextColumn()"
-                  type="button"
-                  class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                >
-                  To: {{ nextColumn?.name }}
-                </button>
+                <div class="mt-4 flex flex-col" v-if="nextColumn?.name">
+                  <span class="text-xs text-gray-400">Move to:</span>
+                  <button
+                    @click="moveToNextColumn()"
+                    type="button"
+                    class="mt-2 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                  >
+                    {{ nextColumn?.name }}
+                  </button>
+                </div>
 
                 <div class="mt-4 flex flex-col">
                   <span class="text-xs text-gray-400">State:</span>
@@ -226,7 +229,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent, computed } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
@@ -251,7 +254,13 @@ export default defineComponent({
     function moveToNextColumn() {
       store.dispatch("updateTask", {
         ...task.value,
+        list: { ...nextColumn.value },
         listId: nextColumn.value.id,
+      });
+
+      store.dispatch("changeTaskList", {
+        task: task.value,
+        newListId: nextColumn.value.id,
       });
     }
 
